@@ -1,0 +1,111 @@
+//Problem1-Solution1 
+ALGORITHM
+VAR 
+array_set1 : ARRAY_OF integer[5];
+array_set2 : ARRAY_OF integer[5];
+sum : INTEGER:=0;
+BEGIN
+Write('set1');
+read(set1);
+Write('set2');
+read(set2);
+    FOR i FROM 0 TO i=<set1.length STEP 1 DO  
+        FOR j FROM 0 TO j =< set2.length STEP 1 DO
+            IF (set1[i]<>set2[j]) THEN
+                sum := sum +set1[i]+set2[j];
+            END_IF
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO set2.length STEP 1  DO
+        FOR i FROM 0 TO set2.length STEP 1  DO
+            IF (set1[i]<>set2[j]) THEN
+                sum:= sum +set1[i]+set2[j];
+            END_IF
+        END_FOR
+    END_FOR
+print(sum);
+
+
+//Problem1-Solution2
+ALGORITHM
+VAR
+hashset: HASH_TABL<INTEGER,INTEGER>;
+array_set1 : ARRAY_OF integer[5];
+array_set2 : ARRAY_OF integer[5];
+sum: INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO set1.length STEP step  DO
+        hashset.insert(set1[i],1);
+    END_FOR
+        FOR j FROM 0 TO i=<set2.length STEP step  DO
+            IF (lookup.hashset(set2[j])== TRUE) THEN
+                    (hashset.insert(set1[i],2));
+                ELSE
+                    (hashset.insert(set2[j],1));
+            END_IF
+        END_FOR
+            IF  (hashset.get(set1[i])=1)and (hashset.get(set2[j]=1)) THEN
+                    sum:=set1[i]+set2[j];
+                ELSE_IF
+                (hashset.get(set1[i]=2)) THEN
+                    sum:=0;
+                ELSE
+                    sum:=0;
+            END_IF
+        return sum;
+
+
+//Problem1-Solution1
+ALGORITHM
+VAR 
+array_set1 : ARRAY_OF integer[5];
+array_set2 : ARRAY_OF integer[5];
+sum : INTEGER:=0;
+BEGIN
+Write('set1');
+read(set1);
+Write('set2');
+read(set2);
+    FOR i FROM 0 TO i=<set1.length STEP 1 DO  
+        FOR j FROM 0 TO j =< set2.length STEP 1 DO
+            IF (set1[i]=set2[j]) THEN
+                sum := sum +set1[i]+set2[j];
+            END_IF
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO j=<set2.length STEP 1  DO
+        FOR i FROM 0 TO i=<set2.length STEP 1  DO
+            IF (set1[i]=set2[j]) THEN
+                sum:= sum +set1[i]+set2[j];
+            END_IF
+        END_FOR
+    END_FOR
+print(sum);
+
+
+//Problem2-Solution2
+ALGORITHM
+VAR
+hashset: HASH_TABL<INTEGER,INTEGER>;
+array_set1 : ARRAY_OF integer[5];
+array_set2 : ARRAY_OF integer[5];
+sum: INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO i=<set1.length STEP step  DO
+            hashset.insert(set1[i],1);
+    END_FOR
+
+    FOR j FROM 0 TO j=<set2.length STEP step  DO
+        IF (lookup.hashset(set2[j])== TRUE) THEN
+            hashset.insert(set1[i],2);
+        ELSE
+        hashset.insert(set2[j],1);
+        END_IF
+    END_FOR
+
+        IF (hashset.get(set1[i]=2) THEN
+            sum:=set1[i]*2;
+        ELSE
+            sum:=0;
+        END_IF
+    +    return sum;
